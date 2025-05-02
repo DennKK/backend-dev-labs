@@ -1,0 +1,21 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Cache Demo";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p><strong>Current Time:</strong> @Model</p>
+<p><strong>Cache Status:</strong> @ViewBag.CacheStatus</p>
+
+<div>
+    <form method="get" action="/Cache/MemoryCacheView">
+        <button type="submit">Memory Cache</button>
+    </form>
+    <form method="get" action="/Cache/DistributedCacheDemo">
+        <button type="submit">Redis Cache</button>
+    </form>
+    <form method="get" action="/Cache/ResponseCacheDemo">
+        <button type="submit">Response Cache (Browser)</button>
+    </form>
+</div>
