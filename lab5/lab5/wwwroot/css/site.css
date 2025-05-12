@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 100px;
+    background-color: red; /* установлен красный фон */
+}
+
+h1 {
+    color: #333;
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
