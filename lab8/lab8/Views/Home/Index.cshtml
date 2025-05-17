@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Lab 8 — Работа с состояниями</h2>
+
+<!-- Сессии -->
+<form method="post" asp-action="SetSession">
+    <label>Введите имя:</label>
+    <input type="text" name="username" />
+    <button type="submit">Сохранить в сессию</button>
+</form>
+<form method="post" asp-action="ClearSession" style="display:inline;">
+    <button type="submit">Очистить сессию</button>
+</form>
+<p>Имя из сессии: <strong>@ViewData["SessionName"]</strong></p>
+
+<hr />
+
+<!-- Cookies -->
+<form method="post" asp-action="SetCookie">
+    <label>Введите город:</label>
+    <input type="text" name="city" />
+    <button type="submit">Сохранить в cookie</button>
+</form>
+<form method="post" asp-action="ClearCookie" style="display:inline;">
+    <button type="submit">Очистить cookie</button>
+</form>
+<p>Город из cookie: <strong>@ViewData["City"]</strong></p>
+
+<hr />
+
+<h3>LocalStorage и SessionStorage</h3>
+<input type="text" id="storageInput" placeholder="Введите значение" />
+<button onclick="saveToLocalStorage()">Сохранить в localStorage</button>
+<button onclick="saveToSessionStorage()">Сохранить в sessionStorage</button>
+<button onclick="clearClientStorage()">Очистить оба хранилища</button>
+
+<p id="localOutput"></p>
+<p id="sessionOutput"></p>
+
+@section Scripts {
+    <script src="~/js/storageDemo.js"></script>
+}
